@@ -11,28 +11,23 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">WordPress Site</a>
+                            <a class="navbar-brand" href="/">WordPress Site</a>
                         </div>
-                        <div id="navbar" class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Index</a></li>
-                                <li><a href="#about">Services</a></li>
-                                <li><a href="#contact">Portfolio</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">PSD to HTML</a></li>
-                                        <li><a href="#">WordPress Theme</a></li>
-                                        <li><a href="#">WordPress Plugin</a></li>
-                                        <li><a href="#">WooCommerce E-Strore</a></li>
-                                    </ul>
-                                    <li><a href="#contact">Contact</a></li>
-                                </li>
-                            </ul>
-                        </div>
+                        <?php
+                        wp_nav_menu(array(
+                            'menu' => 'primary',
+                            'theme_location' => 'primary',
+                            'depth' => 2,
+                            'container' => 'div',
+                            'container_class' => 'collapse navbar-collapse',
+                            'container_id' => 'main-nav',
+                            'menu_class' => 'nav navbar-nav',
+                            'falback_cb' => 'wp_bootstrap_navwalker::fallback',
+                            'walker' => new wp_bootstrap_navwalker()
+                        ));
+                        ?>
                     </div>
                 </nav>
-
             </div>
         </div>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
