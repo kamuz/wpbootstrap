@@ -15,3 +15,34 @@
         <link href="<?php bloginfo('stylesheet_url') ?>" rel="stylesheet">
         <?php wp_head() ?>
     </head>
+    <body <?php body_class(); ?>>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">WordPress Site</a>
+                        </div>
+                        <?php
+                        wp_nav_menu(array(
+                            'menu' => 'primary',
+                            'theme_location' => 'primary',
+                            'depth' => 2,
+                            'container' => 'div',
+                            'container_class' => 'collapse navbar-collapse',
+                            'container_id' => 'main-nav',
+                            'menu_class' => 'nav navbar-nav',
+                            'falback_cb' => 'wp_bootstrap_navwalker::fallback',
+                            'walker' => new wp_bootstrap_navwalker()
+                        ));
+                        ?>
+                    </div>
+                </nav>
+            </div>
+        </div>

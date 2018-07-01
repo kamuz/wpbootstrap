@@ -10,3 +10,15 @@ License URI: LICENSE
 Text Domain: wpbootstrap
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+
+body{
+	margin-top: 95px;
+}
+
+.home{
+    margin: 0;
+}
+
+h1{
+    margin-top: 0;
+}
