@@ -3,11 +3,11 @@
     <div class="row">
         <?php get_sidebar() ?>
         <div class="col-lg-9">
-            <ol class="breadcrumb">
+            <!-- <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Library</a></li>
                 <li class="active">Data</li>
-            </ol>
+            </ol> -->
             <div class="row">
                 <?php if(have_posts()): ?>
                     <?php while(have_posts()): the_post(); ?>

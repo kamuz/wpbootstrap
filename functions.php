@@ -1,9 +1,18 @@
 <?php
 
-// Register Walker Class for Bootstrap
-require_once('walker.php');
+/**
+ * Register Walker Class for Bootstrap
+ */
+require get_template_directory() . '/walker.php';
 
-// Theme Support
+/**
+ * Customizer File
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Theme Support
+ */
 function wpb_theme_support(){
     add_theme_support('post-thumbnails');
     // Nav Menus
@@ -15,13 +24,17 @@ function wpb_theme_support(){
 }
 add_action('after_setup_theme', 'wpb_theme_support');
 
-// Excerpt Length
+/**
+ * Excerpt Length
+ */
 function set_excerpt_length(){
     return 20;
 }
 add_filter('excerpt_length', 'set_excerpt_length');
 
-// Widget Locations
+/**
+ * Widget Locations
+ */
 function wpb_init_widgets($id){
     register_sidebar(array(
         'name' => 'Categories',
@@ -43,7 +56,9 @@ function wpb_init_widgets($id){
 }
 add_action('widgets_init', 'wpb_init_widgets');
 
-// Define Output of Categories Widget
+/**
+ * Define Output of Categories Widget
+ */
 function wpb_categories_list_group_filter ($variable) {
    $variable = str_replace('<li class="cat-item cat-item-', '<li class="list-group-item cat-item cat-item-', $variable);
    $variable = str_replace('(', '<span class="badge cat-item-count"> ', $variable);

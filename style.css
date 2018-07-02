@@ -27,3 +27,7 @@ h1, h2, h3{
     padding-left: 0;
     margin-bottom: 20px;
 }
+
+.marketing .img-circle.img-responsive{
+    margin: 0 auto;
+}
