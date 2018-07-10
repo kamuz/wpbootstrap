@@ -1,7 +1,22 @@
 <?php if(is_single()): ?>
     <div class="col-md-12">
         <h1><?php the_title() ?></h1>
-        <p><small><i class="glyphicon glyphicon-calendar"></i> <?php the_time('d-m-Y') ?> by <i class="glyphicon glyphicon-user"></i> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author() ?></a></small></p>
+        <p>
+            <small><i class="glyphicon glyphicon-calendar"></i> <?php the_time('d-m-Y') ?> 
+            by <i class="glyphicon glyphicon-user"></i> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author() ?></a></small>
+            <i class="glyphicon glyphicon-folder-open"></i> 
+            <?php
+                $categories = get_the_category();
+                $separator = ', ';
+                $output = '';
+                if($categories){
+                    foreach($categories as $category){
+                        $output .= '<a href="' . get_category_link($category->term_id).'">' . $category->cat_name . '</a>' . $separator;
+                    }
+                }
+                echo trim($output, $separator);
+            ?>
+        </p>
         <?php if(has_post_thumbnail()): ?>
             <div class="img-thumbnail">
             <?php the_post_thumbnail(); ?>
