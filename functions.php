@@ -66,3 +66,24 @@ function wpb_categories_list_group_filter ($variable) {
    return $variable;
 }
 add_filter('wp_list_categories','wpb_categories_list_group_filter');
+
+/**
+ * Get parent posts
+ */
+function get_top_parent(){
+    global $post;
+    if($post->post_parent){
+        $ancestors = get_post_ancestors($post->ID);
+        return $ancestors[0];
+    }
+    return $post->ID;
+}
+
+/**
+ * Is parent
+ */
+function page_is_parent(){
+    global $post;
+    $pages = get_pages('child_of=' . $post->ID);
+    return count($pages);
+}
