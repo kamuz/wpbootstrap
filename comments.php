@@ -21,7 +21,7 @@ if ( post_password_required() )
                     'avatar_size' => 74,
                 ) );
             ?>
-        </ol><!-- .comment-list -->
+        </ol>
  
         <?php
             // Are there comments to navigate through?

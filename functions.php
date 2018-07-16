@@ -11,6 +11,11 @@ require get_template_directory() . '/walker.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Add/Modify Widget Class
+ */
+require get_template_directory() . '/widgets/class-wp-widget-categories.php';
+
+/**
  * Theme Support
  */
 function wpb_theme_support(){
@@ -87,3 +92,12 @@ function page_is_parent(){
     $pages = get_pages('child_of=' . $post->ID);
     return count($pages);
 }
+
+/**
+ * Register Widgets
+ */
+function wpboostrap_register_widgets(){
+    register_widget('WP_Widget_Categories_Custom');
+}
+
+add_action('widgets_init', 'wpboostrap_register_widgets');

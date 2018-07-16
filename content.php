@@ -18,9 +18,7 @@
             ?>
         </p>
         <?php if(has_post_thumbnail()): ?>
-            <div class="img-thumbnail">
-            <?php the_post_thumbnail(); ?>
-            </div>
+            <?php echo get_the_post_thumbnail($id, 'large', array('class' => 'thumbnail')); ?>
         <?php endif; ?>
         <p><?php the_content(); ?></p>
         <?php comments_template(); ?>
