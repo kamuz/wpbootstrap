@@ -31,3 +31,8 @@ h1, h2, h3{
 .marketing .img-circle.img-responsive{
     margin: 0 auto;
 }
+
+.custom-logo{
+    float: left;
+    margin: 15px 15px 15px -15px;
+}

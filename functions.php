@@ -19,7 +19,10 @@ require get_template_directory() . '/widgets/class-wp-widget-categories.php';
  * Theme Support
  */
 function wpb_theme_support(){
+    // Post Thumbnail
     add_theme_support('post-thumbnails');
+    // Custom Logo
+    add_theme_support('custom-logo');
     // Nav Menus
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'wpbootstrap'),

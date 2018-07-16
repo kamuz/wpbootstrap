@@ -27,7 +27,16 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/">WordPress Site</a>
+                            <a class="navbar-brand" href="/">
+                            <?php
+                            if(has_custom_logo()){
+                                the_custom_logo();
+                            }
+                             else{
+                                echo get_bloginfo('site_name');
+                            }
+                            ?>
+                            </a>
                         </div>
                         <?php
                         wp_nav_menu(array(
