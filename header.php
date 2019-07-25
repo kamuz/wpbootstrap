@@ -32,7 +32,7 @@
                             if(has_custom_logo()){
                                 the_custom_logo();
                             }
-                             else{
+                            else{
                                 echo get_bloginfo('site_name');
                             }
                             ?>

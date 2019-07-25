@@ -47,12 +47,12 @@ if ( post_password_required() )
         '<div class="form-group comment-form-author"><label for="author">' . __( 'Name', 'domainreference' ) .
         ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
         '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-        '" size="30"' . $aria_req . ' /></div>',
+        '" size="30"/></div>',
         'email' =>
         '<div class="form-group comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) .
         ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
         '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-        '" size="30"' . $aria_req . ' /></div>',
+        '" size="30"/></div>',
         'url' =>
         '<div class="form-group comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
         '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
@@ -86,7 +86,7 @@ if ( post_password_required() )
           wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
         ) . '</p>',
         'comment_notes_before' => '<p class="comment-notes">' .
-        __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) .
+        __( 'Your email address will not be published.' ) . 
         '</p>',
         'comment_notes_after' => '<p class="form-allowed-tags">' .
         sprintf(

@@ -22,14 +22,39 @@ function wpb_theme_support(){
     // Post Thumbnail
     add_theme_support('post-thumbnails');
     // Custom Logo
-    add_theme_support('custom-logo');
+    $defaults = array(
+        'height' => 100,
+        'width' => 400,
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
     // Nav Menus
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'wpbootstrap'),
     ));
     // Post Formats
     add_theme_support('post-formats', array('aside', 'gallery'));
+    // Custom header via Customizer
+    $args = array(
+        'default-image' => get_template_directory_uri() . '/img/01.jpg',
+        'flex-width' => true,
+        'width' => 1000,
+        'flex-height' => true,
+        'height' => 250,
+    );
+    add_theme_support( 'custom-header', $args );
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
 }
+
 add_action('after_setup_theme', 'wpb_theme_support');
 
 /**

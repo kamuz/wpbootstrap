@@ -4,7 +4,7 @@
         <p>
             <small><i class="glyphicon glyphicon-calendar"></i> <?php the_time('d-m-Y') ?> 
             by <i class="glyphicon glyphicon-user"></i> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author() ?></a></small>
-            <i class="glyphicon glyphicon-folder-open"></i> 
+            <i class="glyphicon glyphicon-folder-open"></i>
             <?php
                 $categories = get_the_category();
                 $separator = ', ';

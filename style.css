@@ -12,7 +12,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 */
 
 body{
-	margin-top: 95px;
+    margin-top: 95px;
 }
 
 .home{
@@ -28,7 +28,7 @@ h1, h2, h3{
     margin-bottom: 20px;
 }
 
-.marketing .img-circle.img-responsive{
+.marketing .img-responsive{
     margin: 0 auto;
 }
 
